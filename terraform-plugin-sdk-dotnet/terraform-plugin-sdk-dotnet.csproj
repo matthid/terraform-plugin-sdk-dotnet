@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Matthid.TerraformSdk</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- https://github.com/grpc/grpc/blob/master/src/csharp/BUILD-INTEGRATION.md#i-just-want-to-generate-proto-and-grpc-c-sources-from-my-proto-files-no-c-compile -->
+    <Protobuf Include="**/*.proto" OutputDir="./protobuf" CompileOutputs="false" />
+  </ItemGroup>
+  <PropertyGroup>
+    <!-- https://github.com/grpc/grpc/blob/master/src/csharp/BUILD-INTEGRATION.md#i-am-getting-a-warning-about-a-missing-expected-file -->
+    <Protobuf_NoWarnMissingExpected>true</Protobuf_NoWarnMissingExpected>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.7.0" />
+    <PackageReference Include="Grpc" Version="1.*" />
+    <PackageReference Include="Grpc.Tools" Version="1.*" PrivateAssets="All" />
+    <PackageReference Include="Grpc.HealthCheck" Version="1.*" />
+    <PackageReference Include="MessagePack" Version="2.1.165" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+</Project>

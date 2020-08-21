@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "terraform-provider-dotnetsample": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "GRPC_VERBOSITY": "ERROR",
+        "GRPC_TRACE": "tcp,http,api"
+      }
+    }
+  }
+}
